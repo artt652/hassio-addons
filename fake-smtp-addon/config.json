@@ -3,7 +3,7 @@
   "version": "1.0",
   "slug": "fake_smtp_server",
   "description": "A fake SMTP server that forwards emails to Telegram",
-  "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
+  "arch": ["aarch64", "armhf", "armv7", "amd64", "i386"],
   "startup": "application",
   "boot": "auto",
   "ports": {
