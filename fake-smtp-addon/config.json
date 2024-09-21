@@ -17,5 +17,6 @@
   "ports": {
     "1025/tcp": 1025
   },
- 
+  "webui": "http://[HOST]:[PORT:1025]",
+  "host_network": true
 }
