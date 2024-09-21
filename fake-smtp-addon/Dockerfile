@@ -11,11 +11,15 @@ COPY run.sh .
 RUN pip install requests
 RUN pip install aiosmtpd
 
-# Make the run.sh executable
+# Make the run.sh script executable
 RUN chmod +x /usr/src/app/run.sh
 
-# Expose the port for the SMTP server
+# Expose the port for the SMTP server (important for Home Assistant)
 EXPOSE 1025
 
-# Start the script
+# Run as user "homeassistant" (required for Home Assistant add-ons)
+RUN adduser --disabled-password --gecos "" homeassistant
+USER homeassistant
+
+# Start the script via run.sh
 CMD ["/usr/src/app/run.sh"]
