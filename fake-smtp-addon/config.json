@@ -1,20 +1,21 @@
 {
-  "name": "Fake SMTP Server",
+  "name": "SMTP to Telegram Forwarder",
   "version": "1.0",
-  "slug": "fake_smtp_server",
-  "description": "A fake SMTP server that forwards emails to Telegram",
-  "arch": ["aarch64", "armhf", "armv7", "amd64", "i386"],
-  "startup": "application",
+  "slug": "smtp_telegram_forwarder",
+  "description": "A fake SMTP server that forwards emails and images to Telegram.",
+  "arch": ["amd64", "armv7", "arm64"],
+  "startup": "services",
   "boot": "auto",
+  "options": {
+    "TELEGRAM_BOT_TOKEN": "your_bot_token",
+    "TELEGRAM_CHAT_ID": "your_chat_id"
+  },
+  "schema": {
+    "TELEGRAM_BOT_TOKEN": "str",
+    "TELEGRAM_CHAT_ID": "str"
+  },
   "ports": {
     "1025/tcp": 1025
   },
-  "options": {
-    "telegram_bot_token": "",
-    "telegram_chat_id": ""
-  },
-  "schema": {
-    "telegram_bot_token": "str",
-    "telegram_chat_id": "str"
-  }
+ 
 }
