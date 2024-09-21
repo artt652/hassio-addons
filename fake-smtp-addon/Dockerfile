@@ -9,6 +9,7 @@ COPY run.sh .
 
 # Install necessary dependencies
 RUN pip install requests
+RUN pip install aiosmtpd
 
 # Make the run.sh executable
 RUN chmod +x /usr/src/app/run.sh
