@@ -7,8 +7,8 @@
   "startup": "services",
   "boot": "auto",
   "options": {
-    "TELEGRAM_BOT_TOKEN": "your_bot_token",
-    "TELEGRAM_CHAT_ID": "your_chat_id"
+    "TELEGRAM_BOT_TOKEN": "",
+    "TELEGRAM_CHAT_ID": ""
   },
   "schema": {
     "TELEGRAM_BOT_TOKEN": "str",
