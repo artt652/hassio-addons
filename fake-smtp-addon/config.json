@@ -3,7 +3,7 @@
   "version": "1.0",
   "slug": "smtp_telegram_forwarder",
   "description": "A fake SMTP server that forwards emails and images to Telegram.",
-  "arch": ["amd64", "armv7", "arm64"],
+  "arch": ["aarch64", "amd64", "armv7", "armhf", "i386"],
   "startup": "services",
   "boot": "auto",
   "options": {
