@@ -103,7 +103,7 @@ class FakeSMTPServer(smtpd.SMTPServer):
             print(f"Failed to send image to Telegram: {e}")
 
 if __name__ == "__main__":
-    smtp_server = FakeSMTPServer(('localhost', 1025), None)  # Changed to port 1025
+    smtp_server = FakeSMTPServer(('0.0.0.0', 1025), None)  # Changed to port 1025
     try:
         asyncore.loop()
     except KeyboardInterrupt:
