@@ -1,8 +1,8 @@
 #!/bin/bash
 
-# Read environment variables from Home Assistant Add-on configuration
-export TELEGRAM_BOT_TOKEN="$TELEGRAM_BOT_TOKEN"
-export TELEGRAM_CHAT_ID="$TELEGRAM_CHAT_ID"
+# Print environment variables for debugging
+echo "TELEGRAM_BOT_TOKEN: $TELEGRAM_BOT_TOKEN"
+echo "TELEGRAM_CHAT_ID: $TELEGRAM_CHAT_ID"
 
 # Check if the required environment variables are set
 if [ -z "$TELEGRAM_BOT_TOKEN" ] || [ -z "$TELEGRAM_CHAT_ID" ]; then
