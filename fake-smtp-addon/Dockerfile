@@ -8,18 +8,17 @@ COPY smtp_server.py .
 COPY run.sh .
 
 # Install necessary dependencies
-RUN pip install requests
-RUN pip install aiosmtpd
+RUN pip install requests aiosmtpd
 
-# Make the run.sh script executable
+# Make the run.sh executable
 RUN chmod +x /usr/src/app/run.sh
 
-# Expose the port for the SMTP server (important for Home Assistant)
+# Expose the port for the SMTP server
 EXPOSE 1025
 
-# Run as user "homeassistant" (required for Home Assistant add-ons)
-RUN adduser --disabled-password --gecos "" homeassistant
-USER homeassistant
+# Add environment variables explicitly
+ENV TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}
+ENV TELEGRAM_CHAT_ID=${TELEGRAM_CHAT_ID}
 
-# Start the script via run.sh
+# Start the script
 CMD ["/usr/src/app/run.sh"]
