@@ -1,0 +1,1 @@
+Converts images into sketch-like drawings for coloring.
