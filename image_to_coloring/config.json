@@ -1,0 +1,14 @@
+{
+  "name": "Image to Coloring Page Converter",
+  "version": "1.0",
+  "slug": "image_to_coloring",
+  "description": "Converts images into sketch-like drawings for coloring",
+  "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
+  "startup": "application",
+  "boot": "auto",
+  "ports": {
+    "5000/tcp": 5000
+  },
+  "schema": {},
+  "webui": "http://[HOST]:[PORT:5000]"
+}

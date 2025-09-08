@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image to Coloring Page Converter</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+	<link rel="icon" href="/static/images/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <h1>Convert Image to Sketch</h1>
+    <form id="uploadForm" action="/convert" method="POST" enctype="multipart/form-data">
+        <label for="imageUpload"></label>
+        <input type="file" id="imageUpload" name="image" accept="image/*" required>
+        <button type="submit" id="convertButton">Convert to Sketch</button>
+
+    </form>
+		<!-- Hidden download button until the image is generated -->
+		<a id="downloadButton" href="#" download="sketch.png" style="display:none;">Download Sketch</a>
+		
+    <div id="result"></div>
+
+    <script src="/static/js/script.js"></script>
+</body>
+</html>
