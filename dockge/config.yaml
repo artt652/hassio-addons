@@ -1,0 +1,23 @@
+name: "Dockge"
+description: "A fancy, easy-to-use and reactive self-hosted docker compose.yaml stack-oriented manager"
+version: "1.0.0"
+slug: "dockge"
+init: true
+arch:
+  - aarch64
+  - amd64
+  - armhf
+  - armv7
+  - i386
+startup: services
+ingress: true
+ingress_port: 5001
+panel_icon: mdi:docker
+webui: http://[HOST]:[PORT:5001]/
+read_only: false
+docker_api: true
+map:
+  - share:rw
+ports:
+  5001/tcp: 5001
+image: louislam/dockge:1.0.0
