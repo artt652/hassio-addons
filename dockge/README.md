@@ -1,2 +1,1 @@
-Dockge
-A fancy, easy-to-use and reactive self-hosted docker compose.yaml stack-oriented manager.
+Dockge a fancy, easy-to-use and reactive self-hosted docker compose.yaml stack-oriented manager.
