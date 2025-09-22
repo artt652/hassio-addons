@@ -1,0 +1,1 @@
+A fake SMTP server that forwards emails and images to Telegram.
