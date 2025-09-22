@@ -20,4 +20,4 @@ map:
   - share:rw
 ports:
   5001/tcp: 5001
-image: louislam/dockge:1.0.0
+image: "louislam/dockge"
