@@ -10,6 +10,7 @@ arch:
   - armv7
   - i386
 startup: services
+url: "https://github.com/artt652/hassio-addons/edit/main/dockge"
 #ingress: true
 #ingress_port: 5001
 panel_icon: mdi:docker
