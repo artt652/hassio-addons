@@ -1,9 +1,5 @@
-<table hidden>
-  <tr>
-    <td>
-      <img src="https://raw.githubusercontent.com/artt652/hassio-addons/refs/heads/main/dockge/icon.png" alt="Dockge" />
-    </td>
-    <td>
+
+   ![Dockge](https://raw.githubusercontent.com/artt652/hassio-addons/refs/heads/main/dockge/icon.png)<br>
       <a href="https://github.com/louislam/dockge">Dockge</a> a fancy, easy-to-use and reactive self-hosted docker compose.yaml stack-oriented manager.
 </table>
       <b>For correct work required to disable "Protection mode" in addon settings.</b><br>
