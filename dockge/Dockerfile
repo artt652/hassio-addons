@@ -22,16 +22,16 @@ WORKDIR /app
 COPY --chown=node:node --from=build_healthcheck /app/extra/healthcheck /app/extra/healthcheck
 COPY --from=build /app/node_modules /app/node_modules
 COPY --chown=node:node  . .
-RUN mkdir ./data
 
+# вместо локальной папки data → используем persistent storage HA
+RUN rm -rf /app/data && ln -s /data /app/data
 
-# It is just for safe, as by default, it is disabled in the latest Node.js now.
-# Read more:
-# - https://github.com/sagemathinc/cocalc/issues/6963
-# - https://github.com/microsoft/node-pty/issues/630#issuecomment-1987212447
+# отключаем io_uring (см. оригинальный Dockerfile)
 ENV UV_USE_IO_URING=0
 
-VOLUME /app/data
+# том для Home Assistant
+VOLUME /data
+
 EXPOSE 5001
 HEALTHCHECK --interval=60s --timeout=30s --start-period=60s --retries=5 CMD extra/healthcheck
 ENTRYPOINT ["/usr/bin/dumb-init", "--"]
