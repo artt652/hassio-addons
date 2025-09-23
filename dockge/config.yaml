@@ -1,6 +1,6 @@
 name: "Dockge"
 description: "A fancy, easy-to-use and reactive self-hosted docker compose.yaml stack-oriented manager"
-version: "1.0.0"
+version: "1.0.1"
 slug: "dockge"
 init: true
 arch:
@@ -16,10 +16,10 @@ webui: http://[HOST]:[PORT:5001]/
 read_only: false
 docker_api: true
 
-# Пробрасываем постоянное хранилище
+# Пробрасываем только config, чтобы Dockge писал свои настройки туда
 map:
+  - config:rw
   - share:rw
-  - addon_config:rw
 
 ports:
   5001/tcp: 5001
