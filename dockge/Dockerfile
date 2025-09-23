@@ -26,17 +26,20 @@ COPY --chown=node:node . .
 # отключаем io_uring (см. оригинальный Dockerfile)
 ENV UV_USE_IO_URING=0
 
-# Объявляем том (для совместимости)
-VOLUME /data
+# абсолютный каталог данных Dockge
+ENV DOCKGE_DATA_DIR=/data/dockge
 
-# Копируем скрипт entrypoint
-COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
-RUN chmod +x /usr/local/bin/docker-entrypoint.sh
+# создаём папку для данных и даём права пользователю node
+RUN mkdir -p /data/dockge && chown -R node:node /data/dockge
+
+# Объявляем том для HA
+VOLUME /data/dockge
 
 EXPOSE 5001
 HEALTHCHECK --interval=60s --timeout=30s --start-period=60s --retries=5 CMD extra/healthcheck
 
-ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh"]
+# используем dumb-init для корректного завершения
+ENTRYPOINT ["/usr/bin/dumb-init", "--"]
 CMD ["tsx", "./backend/index.ts"]
 
 ############################################
