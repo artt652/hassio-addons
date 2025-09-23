@@ -10,15 +10,18 @@ arch:
   - armv7
   - i386
 startup: services
-url: "https://github.com/artt652/hassio-addons/edit/main/dockge"
-#ingress: true
-#ingress_port: 5001
+url: "https://github.com/artt652/hassio-addons/tree/main/dockge"
 panel_icon: mdi:docker
 webui: http://[HOST]:[PORT:5001]/
 read_only: false
 docker_api: true
+
+# Пробрасываем постоянное хранилище
 map:
   - share:rw
+  - addon_config:rw
+
 ports:
   5001/tcp: 5001
+
 image: "louislam/dockge"
